@@ -13,11 +13,10 @@ gulp.task('setEnv', () => {
   }
 })
 
-gulp.task('develop', function () {
+gulp.task('develop', () => {
   livereload.listen()
   nodemon({
     script: 'app.js',
-    ext: 'js handlebars coffee',
     stdout: false
   }).on('readable', function () {
     this.stdout.on('data', function (chunk) {
@@ -31,5 +30,6 @@ gulp.task('develop', function () {
 })
 
 gulp.task('default', [
+  'setEnv',
   'develop'
 ])
