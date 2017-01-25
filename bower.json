@@ -1,6 +1,16 @@
 {
-  "name": "express-web3",
-  "version": "0.0.1",
+  "name": "aad-ethereum-explorer",
+  "version": "1.0.1",
+  "private": true,
+  "dependencies": {
+    "angular": "~1.4.0",
+    "angular-route": "~1.4.0",
+    "angular-loader": "~1.4.0",
+    "angular-mocks": "~1.4.0",
+    "html5-boilerplate": "~5.2.0",
+    "web3": "~0.14.0",
+    "angular-bootstrap": "~0.13.3"
+  },
   "ignore": [
     "**/.*",
     "node_modules",
