@@ -8,7 +8,10 @@
     "test": "mocha --recursive test",
     "test:coverage": "nyc npm test",
     "test:unit": "mocha --recursive test/middleware test/models test/routes",
-    "test:integration": "mocha --recursive test/integration"
+    "test:integration": "mocha --recursive test/integration",
+    "protractor": "protractor e2e-tests/protractor.conf.js",
+    "test:karma": "karma start karma.conf.js",
+    "test-single-run": "karma start karma.conf.js  --single-run"
   },
   "dependencies": {
     "body-parser": "^1.13.3",
@@ -26,18 +29,19 @@
     "chai": "^3.5.0",
     "debug": "^2.2.0",
     "gulp": "^3.9.0",
-    "gulp-nodemon": "^2.0.2",
+    "gulp-env": "^0.4.0",
     "gulp-livereload": "^3.8.0",
-    "mocha": "^3.0.2",
-    "nyc": "^8.1.0",
-    "supertest": "^2.0.0",
+    "gulp-nodemon": "^2.0.2",
     "jasmine-core": "^2.3.4",
     "karma": "~0.12",
     "karma-chrome-launcher": "^0.1.12",
     "karma-firefox-launcher": "^0.1.6",
     "karma-jasmine": "^0.3.5",
     "karma-junit-reporter": "^0.2.2",
+    "mocha": "^3.0.2",
+    "nyc": "^8.1.0",
     "protractor": "^2.1.0",
-    "shelljs": "^0.2.6"
+    "shelljs": "^0.2.6",
+    "supertest": "^2.0.0"
   }
 }

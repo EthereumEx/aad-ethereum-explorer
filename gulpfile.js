@@ -1,6 +1,17 @@
 const gulp = require('gulp')
 const nodemon = require('gulp-nodemon')
 const livereload = require('gulp-livereload')
+const env = require('gulp-env')
+
+const localEnvFile = './config/env.dev.js'
+
+gulp.task('setEnv', () => {
+  try {
+    env({file: localEnvFile})
+  } catch (err) {
+    console.warn('No local environment file was found')
+  }
+})
 
 gulp.task('develop', function () {
   livereload.listen()
