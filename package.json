@@ -23,7 +23,7 @@
     "method-override": "^2.3.0",
     "morgan": "^1.6.1",
     "passport": "^0.3.2",
-    "passport-azure-ad": "^2.0.3"
+    "passport-azure-ad": "^3.0.4"
   },
   "devDependencies": {
     "chai": "^3.5.0",
@@ -33,15 +33,15 @@
     "gulp-livereload": "^3.8.0",
     "gulp-nodemon": "^2.0.2",
     "jasmine-core": "^2.3.4",
-    "karma": "~0.12",
-    "karma-chrome-launcher": "^0.1.12",
-    "karma-firefox-launcher": "^0.1.6",
-    "karma-jasmine": "^0.3.5",
-    "karma-junit-reporter": "^0.2.2",
+    "karma": "~1.4",
+    "karma-chrome-launcher": "^2.0.0",
+    "karma-firefox-launcher": "^1.0.0",
+    "karma-jasmine": "^1.1.0",
+    "karma-junit-reporter": "^1.2.0",
     "mocha": "^3.0.2",
-    "nyc": "^8.1.0",
-    "protractor": "^2.1.0",
-    "shelljs": "^0.2.6",
+    "nyc": "^10.1.2",
+    "protractor": "^5.0.0",
+    "shelljs": "^0.7.6",
     "supertest": "^2.0.0"
   }
 }
