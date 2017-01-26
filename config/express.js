@@ -6,14 +6,13 @@ const compress = require('compression')
 const methodOverride = require('method-override')
 const expressSession = require('express-session')
 const passport = require('passport')
-const proxy = require('http-proxy-middleware')
 
 module.exports = function (app, config) {
   var env = process.env.NODE_ENV || 'development'
   app.locals.ENV = env
 
   app.use(logger('dev'))
-  app.use(bodyParser.json())
+  const jsonParser = bodyParser.json()
   app.use(bodyParser.urlencoded({
     extended: true
   }))
@@ -30,17 +29,8 @@ module.exports = function (app, config) {
   app.use(passport.initialize())
   app.use(passport.session())
 
-  var jsonPlaceholderProxy = proxy({
-      target: 'http://localhost:8545',
-      changeOrigin: true,             // for vhosted sites, changes host header to match to target's host
-      logLevel: 'debug'
-  });
-
-  app.use('/geth', jsonPlaceholderProxy)
-
-    
-  app.use('/auth/openid', require(config.root + '/routes/auth'))
-  // app.use('/geth', require(config.root + '/routes/geth'))
+  app.use('/auth/openid', jsonParser, require(config.root + '/routes/auth'))
+  app.use('/geth', ensureAuthenticated, require(config.root + '/routes/geth'))
   app.use('/', ensureAuthenticated, express.static(config.root + '/public'))
 
   app.use('/denied', (req, res, next) => {

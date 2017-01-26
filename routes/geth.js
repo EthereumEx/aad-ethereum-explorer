@@ -1,13 +1,7 @@
 const express = require('express')
+const proxy = require('http-proxy-middleware')
 const router = express.Router()
 
-router.get('/', (req, res) => {
-  res.send('Have a good night Shawn')
-})
-
-router.post('/', (req, res) => {
-  console.log(req.body)
-  res.send('Have a good night Shawn')
-})
+router.use('/', proxy({target: 'http://localhost:8545'}))
 
 module.exports = router
