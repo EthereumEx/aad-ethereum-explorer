@@ -46,7 +46,7 @@ Set the following environment variables
 
 ``` bash
 export EXPRESS_SECRET="<just a random string>"
-export WEBSITE_HOSTNAME="<hostname>:3000"
+export WEBSITE_HOSTNAME="<hostname>:<port>"
 export AD_SECRET=""
 export AD_TENENT_ID=""
 export AD_CLIENT_ID=""
