@@ -14,9 +14,9 @@ module.exports = function (app, config) {
 
   passport.use(new OIDCStrategy({
     redirectUrl: config.creds.returnURL,
-    allowHttpForRedirectUrl: config.allowHttpForRedirectUrl,
     clientID: config.creds.clientID,
     clientSecret: config.creds.clientSecret,
+    allowHttpForRedirectUrl: config.creds.allowHttpForRedirectUrl,
     identityMetadata: config.creds.identityMetadata,
     skipUserProfile: config.creds.skipUserProfile,
     responseType: config.creds.responseType,

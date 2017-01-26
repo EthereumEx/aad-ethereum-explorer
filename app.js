@@ -1,5 +1,8 @@
 const express = require('express')
 const config = require('./config/config')
+const debug = require('debug')('aad-ethereum-explorer')
+
+debug('Config: ', config)
 
 const app = express()
 
