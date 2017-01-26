@@ -18,7 +18,7 @@
 * TODO
 
 ```bash
-geth --rpc --rpccorsdomain "http://localhost:3000"
+geth <your options> --rpc
 ```
 
 ### Set up AAD
@@ -50,6 +50,8 @@ export WEBSITE_HOSTNAME="<hostname>:3000"
 export AD_SECRET=""
 export AD_TENENT_ID=""
 export AD_CLIENT_ID=""
+export RPC_HOST="optional (default http://localhost)"
+export RPC_PORT="optional (default 8545)"
 ```
 
 and run

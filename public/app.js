@@ -27,8 +27,8 @@ angular.module('ethExplorer', ['ngRoute','ui.bootstrap'])
     }])
     .run(function($rootScope) {
         var web3 = new Web3();
-        var eth_node_url = 'http://localhost:3000/geth'; // TODO: remote URL
-	web3.setProvider(new web3.providers.HttpProvider(eth_node_url));
+        var eth_node_url = window.location.protocol + '//' + window.location.host + '/geth';
+        web3.setProvider(new web3.providers.HttpProvider(eth_node_url));
         $rootScope.web3 = web3;
         function sleepFor( sleepDuration ){
             var now = new Date().getTime();
