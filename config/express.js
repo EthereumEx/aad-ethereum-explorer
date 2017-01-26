@@ -30,7 +30,15 @@ module.exports = function (app, config) {
   app.use(passport.initialize())
   app.use(passport.session())
 
-  app.use('/geth', proxy({target: 'http://localhost:8545', changeOrigin: true, logLevel: 'debug'}))
+  var jsonPlaceholderProxy = proxy({
+      target: 'http://localhost:8545',
+      changeOrigin: true,             // for vhosted sites, changes host header to match to target's host
+      logLevel: 'debug'
+  });
+
+  app.use('/geth', jsonPlaceholderProxy)
+
+    
   app.use('/auth/openid', require(config.root + '/routes/auth'))
   // app.use('/geth', require(config.root + '/routes/geth'))
   app.use('/', ensureAuthenticated, express.static(config.root + '/public'))
