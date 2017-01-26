@@ -33,6 +33,12 @@ module.exports = function (app, config) {
   app.use('/geth', ensureAuthenticated, require(config.root + '/routes/geth'))
   app.use('/', ensureAuthenticated, express.static(config.root + '/public'))
 
+  app.use('/denied', (req, res, next) => {
+    var err = new Error('Access denied')
+    err.status = 403
+    next(err)
+  })
+
   app.use(function (req, res, next) {
     var err = new Error('Not Found')
     err.status = 404

@@ -10,6 +10,7 @@ module.exports = {
     clientID: process.env.AD_CLIENT_ID,
     clientSecret: process.env.AD_SECRET,
     skipUserProfile: true,
+    allowHttpForRedirectUrl: true,
     responseType: 'code',
     responseMode: 'query'
   }
