@@ -32,7 +32,7 @@ npm install && bower install
 ```
 
 ## Development
-* First set the env variables in the `config/env.dev.js`. Note this file is not tracked by git and **should never** be committed.
+* First set the env variables in the `config/env.local.js`. Note this file is not tracked by git and **should never** be committed.
 * Navigate to the `aad-ethereum-explorer` directory and run `gulp`
 
 ```bash

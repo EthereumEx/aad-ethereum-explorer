@@ -2,7 +2,7 @@ node_modules/
 public/bower_components
 .nyc_output
 env.sh
-
+*.local*
 .DS_Store
 !.gitkeep
 tmp
