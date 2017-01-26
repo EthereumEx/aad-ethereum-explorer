@@ -6,6 +6,7 @@ const compress = require('compression')
 const methodOverride = require('method-override')
 const expressSession = require('express-session')
 const passport = require('passport')
+const proxy = require('http-proxy-middleware')
 
 module.exports = function (app, config) {
   var env = process.env.NODE_ENV || 'development'
@@ -29,8 +30,9 @@ module.exports = function (app, config) {
   app.use(passport.initialize())
   app.use(passport.session())
 
+  app.use('/geth', proxy({target: 'http://localhost:8545', changeOrigin: true, logLevel: 'debug'}))
   app.use('/auth/openid', require(config.root + '/routes/auth'))
-  app.use('/geth', ensureAuthenticated, require(config.root + '/routes/geth'))
+  // app.use('/geth', require(config.root + '/routes/geth'))
   app.use('/', ensureAuthenticated, express.static(config.root + '/public'))
 
   app.use('/denied', (req, res, next) => {

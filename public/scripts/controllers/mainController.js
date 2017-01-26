@@ -13,7 +13,7 @@ angular.module('ethExplorer')
 	for (var i = 0; i < maxBlocks; ++i) {
 	    $scope.blocks.push(web3.eth.getBlock(blockNum - i));
 	}
-	
+
         $scope.processRequest = function() {
              var requestStr = $scope.ethRequest.split('0x').join('');
 
