@@ -3,7 +3,7 @@ const nodemon = require('gulp-nodemon')
 const livereload = require('gulp-livereload')
 const env = require('gulp-env')
 
-const localEnvFile = './config/env.dev.js'
+const localEnvFile = './config/env.local.js'
 
 gulp.task('setEnv', () => {
   try {
